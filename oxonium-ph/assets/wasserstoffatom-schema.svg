@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Schematisches Modell eines Wasserstoffatoms</title>
+  <desc id="desc">Ein positiv geladenes Proton befindet sich im Kern. Ein negativ geladenes Elektron befindet sich in der Schale. Die Gesamtladung des Atoms ist null.</desc>
+  <defs>
+    <radialGradient id="background" cx="50%" cy="42%" r="70%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef8fa"/>
+    </radialGradient>
+    <radialGradient id="protonFill" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#ff8a68"/>
+      <stop offset="1" stop-color="#e45235"/>
+    </radialGradient>
+    <radialGradient id="electronFill" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#35b8d2"/>
+      <stop offset="1" stop-color="#08728e"/>
+    </radialGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0b3040" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+      <path d="M0,0 L10,5.5 L0,11 Z" fill="#58707a"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="800" rx="38" fill="url(#background)"/>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <text x="70" y="85" fill="#0b3040" font-size="42" font-weight="750">Wasserstoffatom H</text>
+    <text x="70" y="125" fill="#58707a" font-size="22">Vereinfachtes Schalenmodell</text>
+
+    <!-- Elektronenschale / schematische Aufenthaltsregion -->
+    <circle cx="555" cy="425" r="250" fill="#dff4f7" fill-opacity="0.48" stroke="#1688a1" stroke-width="5" stroke-dasharray="15 13"/>
+    <circle cx="555" cy="425" r="223" fill="none" stroke="#2ec4b6" stroke-width="2" stroke-opacity="0.3"/>
+
+    <!-- Proton im Kern -->
+    <circle cx="555" cy="425" r="76" fill="url(#protonFill)" stroke="#a83c28" stroke-width="5" filter="url(#softShadow)"/>
+    <text x="555" y="440" text-anchor="middle" fill="#ffffff" font-size="44" font-weight="850">p⁺</text>
+
+    <!-- Elektron in der Schale -->
+    <circle cx="748" cy="266" r="50" fill="url(#electronFill)" stroke="#07536a" stroke-width="5" filter="url(#softShadow)"/>
+    <text x="748" y="279" text-anchor="middle" fill="#ffffff" font-size="38" font-weight="850">e⁻</text>
+
+    <!-- Beschriftung Proton -->
+    <path d="M495 474 C420 540 325 554 234 554" fill="none" stroke="#58707a" stroke-width="4" marker-end="url(#arrow)"/>
+    <rect x="68" y="515" width="300" height="102" rx="16" fill="#ffffff" stroke="#c9dde2" stroke-width="3"/>
+    <text x="91" y="552" fill="#0b3040" font-size="25" font-weight="750">Proton im Kern</text>
+    <text x="91" y="587" fill="#e45235" font-size="22" font-weight="700">Ladung: +1</text>
+
+    <!-- Beschriftung Elektron -->
+    <path d="M790 246 C858 211 909 207 962 215" fill="none" stroke="#58707a" stroke-width="4" marker-end="url(#arrow)"/>
+    <rect x="916" y="146" width="223" height="113" rx="16" fill="#ffffff" stroke="#c9dde2" stroke-width="3"/>
+    <text x="941" y="188" fill="#0b3040" font-size="25" font-weight="750">Elektron</text>
+    <text x="941" y="225" fill="#08728e" font-size="22" font-weight="700">Ladung: −1</text>
+
+    <!-- Beschriftung Schale -->
+    <path d="M365 259 C310 221 255 213 196 226" fill="none" stroke="#58707a" stroke-width="4" marker-end="url(#arrow)"/>
+    <rect x="67" y="167" width="293" height="115" rx="16" fill="#ffffff" stroke="#c9dde2" stroke-width="3"/>
+    <text x="91" y="209" fill="#0b3040" font-size="25" font-weight="750">Elektronenschale</text>
+    <text x="91" y="245" fill="#58707a" font-size="19">schematisch dargestellt</text>
+
+    <!-- Gesamtladung -->
+    <rect x="410" y="702" width="410" height="62" rx="31" fill="#0b3040"/>
+    <text x="615" y="742" text-anchor="middle" fill="#ffffff" font-size="24">
+      <tspan font-weight="650">Gesamtladung:</tspan>
+      <tspan fill="#ffd166" font-weight="850"> +1 + (−1) = 0</tspan>
+    </text>
+  </g>
+</svg>

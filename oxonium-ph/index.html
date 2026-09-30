@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaktives Lernprogramm zu Oxonium-Ionen, pH-Wert und Indikatoren für die gymnasiale Oberstufe.">
+  <meta name="theme-color" content="#0b3040">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230b3040'/%3E%3Ccircle cx='16' cy='17' r='6' fill='%232ec4b6'/%3E%3Ccircle cx='9' cy='9' r='3' fill='white'/%3E%3Ccircle cx='23' cy='9' r='3' fill='white'/%3E%3Ccircle cx='16' cy='27' r='3' fill='white'/%3E%3C/svg%3E">
+  <title>Oxonium-Labor – Lernprogramm</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="modules.css">
+  <link rel="stylesheet" href="lab.css">
+  <link rel="stylesheet" href="refinements.css">
+  <link rel="stylesheet" href="../shared-nav.css">
+</head>
+<body>
+  <a class="skip-link" href="#lerninhalt">Zum Lerninhalt</a>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">H₃O⁺</span><span>Oxonium-Labor</span></div>
+    <div class="topbar-tools">
+      <a class="hub-link" href="../index.html">Alle Lernprogramme</a>
+      <div class="top-progress" aria-label="Gesamtfortschritt"><span id="progressText">0 %</span><span class="progress-track"><span id="progressBar"></span></span></div>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Lernweg">
+      <p class="eyebrow">Dein Lernweg</p>
+      <nav id="moduleNav">
+        <button class="nav-item active" data-target="start"><span>01</span>Start & Grundlagen</button>
+        <button class="nav-item" data-target="oxonium"><span>02</span>Vom Proton zu H₃O⁺</button>
+        <button class="nav-item" data-target="ph"><span>03</span>pH verstehen</button>
+        <button class="nav-item" data-target="indikatoren"><span>04</span>Indikatoren deuten</button>
+        <button class="nav-item" data-target="produkte"><span>05</span>Produkt-Check</button>
+        <button class="nav-item" data-target="test"><span>06</span>Selbsttest</button>
+      </nav>
+      <div class="sidebar-note"><strong>Merke</strong><p>Dein Fortschritt bleibt auf diesem Gerät gespeichert.</p></div>
+      <button class="reset-progress" id="resetProgress">Fortschritt zurücksetzen</button>
+    </aside>
+
+    <main id="lerninhalt" tabindex="-1">
+      <section class="module active" id="start" data-module="start">
+        <div class="module-head">
+          <div><p class="eyebrow">Modul 1 · Fundament</p><h1>Was steckt hinter H⁺?</h1><p class="lead">Aktiviere zuerst drei Grundlagen. Danach kannst du erklären, warum ein Proton im Wasser nicht allein bleibt.</p></div>
+          <div class="module-badge"><span>ca. 5 min</span><strong>Grundlagen</strong></div>
+        </div>
+        <div class="goal"><span aria-hidden="true">◎</span><div><strong>Dein Ziel</strong><p>Du unterscheidest Atom, Ion, Elektron und Proton und deutest Ladungen sicher.</p></div></div>
+
+        <article class="card atom-card">
+          <div>
+            <p class="step-label">Erklärung 1/2</p>
+            <h2>Das Wasserstoffatom: klein, aber entscheidend</h2>
+            <p>Ein Wasserstoffatom besitzt im Kern <strong>ein Proton</strong> und in seiner Hülle <strong>ein Elektron</strong>. Die Ladungen gleichen sich aus: Das Atom ist insgesamt neutral.</p>
+            <div class="equation-strip"><span>Proton: +1</span><span>+</span><span>Elektron: −1</span><span>=</span><strong>Gesamtladung: 0</strong></div>
+          </div>
+          <img class="atom-image" src="assets/wasserstoffatom-schema.svg" alt="Beschriftetes Schalenmodell eines Wasserstoffatoms: ein Proton im Kern und ein Elektron in der Schale; Gesamtladung null.">
+        </article>
+
+        <article class="card practice-card">
+          <p class="step-label">Kurz-Check</p><h2>Welche Aussage stimmt?</h2>
+          <fieldset class="choice-group" data-question="basics">
+            <legend class="sr-only">Wähle die richtige Aussage über ein neutrales Wasserstoffatom.</legend>
+            <button class="choice" data-correct="false">Es besteht nur aus einem Proton.</button>
+            <button class="choice" data-correct="true">Es enthält ein Proton und ein Elektron.</button>
+            <button class="choice" data-correct="false">Es besitzt die Gesamtladung +2.</button>
+          </fieldset>
+          <div class="feedback" aria-live="polite"></div>
+        </article>
+        <button class="primary next-module" data-next="oxonium">Weiter: Wie entsteht H₃O⁺? <span aria-hidden="true">→</span></button>
+      </section>
+
+      <section class="module" id="oxonium" data-module="oxonium" hidden>
+        <div class="module-head"><div><p class="eyebrow">Modul 2 · Teilchenebene</p><h1>Vom Proton zum Oxonium-Ion</h1><p class="lead">Verfolge die Protonenübertragung in vier Schritten: vom neutralen Wasserstoffatom über HCl bis zum Oxonium-Ion.</p></div><div class="module-badge"><span>ca. 12 min</span><strong>Interaktiv</strong></div></div>
+
+        <div class="lab-stepper" aria-label="Fortschritt im Teilchenmodell">
+          <button class="lab-step-dot active" data-lab-step="1" aria-current="step"><span>1</span><small>H → H⁺</small></button>
+          <button class="lab-step-dot" data-lab-step="2" disabled><span>2</span><small>H⁺ + H₂O</small></button>
+          <button class="lab-step-dot" data-lab-step="3" disabled><span>3</span><small>HCl</small></button>
+          <button class="lab-step-dot" data-lab-step="4" disabled><span>4</span><small>Gesamtgleichung</small></button>
+        </div>
+
+        <div class="lab-stage card" id="guidedLab">
+          <section class="lab-panel active" data-panel="1">
+            <div class="lab-copy"><p class="step-label">Schritt 1 von 4</p><h2>Vom Wasserstoffatom zum Wasserstoffion</h2><p>Ziehe das Elektron aus der Atomhülle in die Ablage. Am Smartphone kannst du zuerst das Elektron und danach die Ablage antippen.</p></div>
+            <div class="drag-workspace single-atom-stage">
+              <div class="interactive-atom" id="step1Atom" aria-label="Wasserstoffatom mit einem Proton und einem Elektron">
+                <span class="atom-orbit" aria-hidden="true"></span>
+                <span class="atom-proton">p⁺</span>
+                <button class="draggable-particle atom-electron" id="labElectron" draggable="true" aria-label="Elektron aus der Schale ziehen">e⁻</button>
+                <strong class="model-name" id="hydrogenLabel">Wasserstoffatom H</strong>
+              </div>
+              <div class="drop-zone electron-drop" id="electronDrop" role="button" tabindex="0" aria-label="Ablage für das Elektron">
+                <span class="drop-icon" aria-hidden="true">⇩</span>
+                <strong>Elektron hier ablegen</strong>
+                <small>außerhalb der Atomhülle</small>
+              </div>
+            </div>
+            <div class="process-equation" aria-label="Reaktionsschema"><span>H</span><span>→</span><strong>H⁺</strong><span>+</span><strong>e⁻</strong></div>
+            <div class="explanation-box" id="step1Explanation" hidden aria-live="polite"><strong>Was ist geschehen?</strong><p>Aus dem neutralen H-Atom wurde durch Entfernung eines Elektrons ein positiv geladenes Wasserstoffion H⁺. Da dieses Ion nur aus einem einzigen Proton besteht, wird es meistens einfach „Proton“ genannt.</p></div>
+            <div class="lab-navigation"><span></span><button class="primary lab-next" id="toLabStep2" disabled>Weiter zu Schritt 2 <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="lab-panel" data-panel="2" hidden>
+            <div class="lab-copy"><p class="step-label">Schritt 2 von 4</p><h2>Das Proton wird auf Wasser übertragen</h2><p>Ein einzelnes Wasserstoffion liegt nicht frei in einer wässrigen Lösung vor. Ziehe H⁺ deshalb auf das Wassermolekül.</p></div>
+            <div class="drag-workspace proton-transfer-stage">
+              <div class="ion-source">
+                <button class="draggable-particle proton-chip" id="labProton" draggable="true" aria-label="Wasserstoffion auf das Wassermolekül ziehen">H⁺</button>
+                <strong>Wasserstoffion</strong><small>ein Proton</small>
+              </div>
+              <span class="movement-arrow" aria-hidden="true">→</span>
+              <div class="water-drop-zone" id="waterDrop" role="button" tabindex="0" aria-label="Wassermolekül als Ziel für das Wasserstoffion">
+                <div class="molecule-water" id="step2Water" aria-hidden="true">
+                  <span class="water-bond bond-left"></span><span class="water-bond bond-right"></span><span class="water-bond bond-bottom"></span>
+                  <span class="water-oxygen">O</span><span class="water-h h-left">H</span><span class="water-h h-right">H</span><span class="water-h h-bottom">H</span><span class="molecule-charge">+</span>
+                </div>
+                <strong class="model-name" id="waterLabel">Wassermolekül H₂O</strong>
+                <small class="drop-hint">H⁺ hierher ziehen</small>
+              </div>
+            </div>
+            <div class="process-equation"><span>H⁺</span><span>+</span><span>H₂O</span><span>→</span><strong>H₃O⁺</strong></div>
+            <div class="explanation-box" id="step2Explanation" hidden aria-live="polite"><strong>Oxonium-Ion entstanden</strong><p>Das neutrale Wassermolekül hat ein Wasserstoffion aufgenommen. Dadurch ist das positiv geladene Oxonium-Ion H₃O⁺ entstanden.</p></div>
+            <div class="lab-navigation"><button class="secondary lab-back" data-go-step="1">← Zurück</button><button class="primary lab-next" id="toLabStep3" disabled>Weiter zu Schritt 3 <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="lab-panel" data-panel="3" hidden>
+            <div class="lab-copy"><p class="step-label">Schritt 3 von 4</p><h2>Woher stammt das übertragene Proton?</h2><p>Ein einzelnes Wasserstoffatom kommt unter natürlichen Bedingungen auf der Erde praktisch nicht alleinstehend vor. In Chlorwasserstoff ist es an ein Chloratom gebunden.</p></div>
+            <div class="hcl-stage" id="hclStage">
+              <div class="hcl-hydrogen">
+                <span class="mini-orbit" aria-hidden="true"></span><span class="mini-proton">p⁺</span><span class="hcl-label">H</span>
+              </div>
+              <div class="bond-pair" aria-label="Zwei bindende Elektronen"><span class="bond-electron from-h">e⁻</span><span class="bond-electron from-cl">e⁻</span><small>bindendes Elektronenpaar</small></div>
+              <div class="chlorine-atom">
+                <span class="cl-shell shell-one" aria-hidden="true"></span><span class="cl-shell shell-two" aria-hidden="true"></span><span class="cl-shell shell-three" aria-hidden="true"></span>
+                <span class="cl-nucleus">17 p⁺</span><span class="cl-electron-count">Atomhülle: 17 e⁻</span><span class="hcl-label">Cl</span>
+              </div>
+            </div>
+            <div class="bond-explanation"><p>Wenn zwei Atome eine Bindung eingehen, wird diese durch zwei Elektronen zwischen ihnen gebildet – eines von jedem Bindungspartner.</p><p>Bei der gedachten Bindungstrennung gibt das Wasserstoffatom sein einziges, in der Bindung befindliches Elektron ab. Dieses verbleibt beim Chloratom.</p></div>
+            <button class="secondary split-button" id="splitHcl">Bindung gedanklich trennen</button>
+            <div class="process-equation hcl-equation" id="hclEquation"><span>HCl</span><span>→</span><strong>H⁺</strong><span>+</span><strong>Cl⁻</strong></div>
+            <div class="explanation-box" id="step3Explanation" hidden aria-live="polite"><strong>H⁺ und Cl⁻</strong><p>Das Wasserstoffteilchen besitzt nun kein Elektron mehr und ist H⁺. Das Chlorid-Ion hat das Bindungselektron übernommen, besitzt damit 18 Elektronen bei 17 Protonen und trägt die Ladung −1.</p></div>
+            <div class="lab-navigation"><button class="secondary lab-back" data-go-step="2">← Zurück</button><button class="primary lab-next" id="toLabStep4" disabled>Gesamtgleichung zeigen <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <section class="lab-panel" data-panel="4" hidden>
+            <div class="lab-copy"><p class="step-label">Schritt 4 von 4</p><h2>Alle Teilchen in einer Gleichung</h2><p>In Wasser laufen Protonenabgabe und Protonenaufnahme zusammen ab. Das Proton schwimmt nicht erst frei herum, sondern wird direkt von HCl auf H₂O übertragen.</p></div>
+            <div class="overall-reaction" aria-label="Gesamtgleichung der Reaktion von Chlorwasserstoff mit Wasser mit Teilchenmodellen">
+              <div class="reaction-pair">
+                <div class="reaction-species"><div class="species-graphic species-hcl" aria-hidden="true"><span class="species-atom species-h">H</span><span class="species-electrons"><i>e⁻</i><i>e⁻</i></span><span class="species-atom species-cl">Cl</span></div><span class="formula-card acid-card">HCl</span></div>
+                <span class="reaction-plus">+</span>
+                <div class="reaction-species"><div class="species-graphic species-water" aria-hidden="true"><span class="species-line line-left"></span><span class="species-line line-right"></span><span class="species-atom species-o">O</span><span class="species-atom species-water-h water-h-left">H</span><span class="species-atom species-water-h water-h-right">H</span></div><span class="formula-card water-card">H₂O</span></div>
+              </div>
+              <span class="reaction-arrow" aria-hidden="true">→</span>
+              <div class="reaction-pair">
+                <div class="reaction-species"><div class="species-graphic species-oxonium" aria-hidden="true"><span class="species-line line-left"></span><span class="species-line line-right"></span><span class="species-line line-bottom"></span><span class="species-atom species-o">O</span><span class="species-atom species-water-h water-h-left">H</span><span class="species-atom species-water-h water-h-right">H</span><span class="species-atom species-water-h water-h-bottom">H</span><span class="species-positive">+</span></div><span class="formula-card oxonium-card">H₃O⁺</span></div>
+                <span class="reaction-plus">+</span>
+                <div class="reaction-species"><div class="species-graphic species-chloride" aria-hidden="true"><span class="species-atom species-cl chloride">Cl</span><span class="species-negative">−</span></div><span class="formula-card chloride-card">Cl⁻</span></div>
+              </div>
+            </div>
+            <div class="final-conclusion"><strong>Protonenübertragung</strong><p>Chlorwasserstoff gibt ein Proton ab. Wasser nimmt das Proton auf und wird zum Oxonium-Ion; zurück bleibt ein Chlorid-Ion.</p></div>
+            <div class="lab-navigation"><button class="secondary lab-back" data-go-step="3">← Zurück</button><button class="secondary" id="resetLab">Teilchenmodell neu starten</button></div>
+          </section>
+        </div>
+        <button class="primary next-module" data-next="ph">Weiter: pH verstehen <span aria-hidden="true">→</span></button>
+      </section>
+
+      <section class="module" id="ph" data-module="ph" hidden>
+        <div class="module-head"><div><p class="eyebrow">Modul 3 · Zusammenhänge</p><h1>pH verstehen statt auswendig lernen</h1><p class="lead">Der pH-Wert beschreibt den sauren oder basischen Zustand einer wässrigen Lösung. Entscheidend ist die Konzentration der Oxonium-Ionen.</p></div><div class="module-badge"><span>ca. 8 min</span><strong>pH-Skala</strong></div></div>
+        <div class="goal"><span aria-hidden="true">◎</span><div><strong>Dein Ziel</strong><p>Du ordnest pH-Werte ein und verknüpfst sie mit der Oxonium-Ionen-Konzentration.</p></div></div>
+        <article class="card rule-card"><p class="step-label">Kernregel für verdünnte wässrige Lösungen</p><div class="inverse-rule"><div><span class="trend up" aria-hidden="true">↑</span><strong>mehr H₃O⁺</strong></div><div class="rule-arrow">führt zu</div><div><span class="trend down" aria-hidden="true">↓</span><strong>kleinerem pH</strong></div></div><p>Umgekehrt gilt: Je weniger Oxonium-Ionen vorhanden sind, desto größer ist der pH-Wert. <strong>„Kleiner pH“ bedeutet also <u>nicht</u> „wenig sauer“.</strong></p></article>
+        <article class="card scale-card"><p class="step-label">Begehbare Skala</p><h2>Wähle einen pH-Wert</h2><div class="ph-scale" id="phScale" role="group" aria-label="pH-Werte von 0 bis 14"></div><div class="scale-labels" aria-hidden="true"><span>sauer</span><span>neutral</span><span>basisch</span></div><div class="ph-readout"><div class="ph-number"><span>pH</span><strong id="phValue">7</strong></div><div><h3 id="phCategory">neutral</h3><p id="phMeaning">Der Neutralpunkt liegt bei pH 7.</p></div></div><p class="fine-print">Häufig betrachtet man Werte von 0 bis 14; bei geeigneten Lösungen sind auch Werte darunter oder darüber möglich.</p></article>
+        <article class="card magnifier-card"><div><p class="step-label">Q1-Plus · Zehnerpotenzen</p><h2>Eine pH-Stufe ist ein Faktor 10</h2><p>Im derzeit verwendeten Modell gilt: Sinkt der pH-Wert um 1, ist die Oxonium-Ionen-Konzentration etwa zehnmal so groß.</p><p class="model-note">Modellhafter Vergleich: gleich große Lösungsvolumina; jedes H₃O⁺-Symbol steht für einen gleichen relativen Anteil.</p></div><div class="concentration-comparison" aria-label="pH 3 besitzt modellhaft die zehnfache Oxonium-Ionen-Konzentration von pH 4"><div class="concentration-card"><strong>pH 4</strong><div class="h3o-grid one"><span>H₃O⁺</span></div><small>1 relativer Anteil</small></div><div class="factor-ten"><span>× 10</span><small>H₃O⁺-Konzentration</small></div><div class="concentration-card emphasized"><strong>pH 3</strong><div class="h3o-grid ten" aria-hidden="true"><span>H₃O⁺</span><span>H₃O⁺</span><span>H₃O⁺</span><span>H₃O⁺</span><span>H₃O⁺</span><span>H₃O⁺</span><span>H₃O⁺</span><span>H₃O⁺</span><span>H₃O⁺</span><span>H₃O⁺</span></div><small>10 relative Anteile</small></div></div></article>
+        <article class="card practice-card"><p class="step-label">Vergleichen</p><h2>Lösung X hat pH 2, Lösung Y pH 5. Was stimmt?</h2><fieldset class="choice-group graded-single" data-module-complete="ph"><legend class="sr-only">Vergleich zweier pH-Werte</legend><button class="choice" data-correct="false">Y enthält mehr Oxonium-Ionen als X.</button><button class="choice" data-correct="true">X enthält unter den betrachteten Bedingungen etwa 1000-mal so viele Oxonium-Ionen wie Y.</button><button class="choice" data-correct="false">X und Y unterscheiden sich nur um den Faktor 3.</button></fieldset><div class="feedback" aria-live="polite"></div></article>
+        <article class="card limits-card"><p class="step-label">Grenzen der Aussage</p><h2>Was der pH-Wert sagt – und was nicht</h2><div class="two-column"><div><h3>Das kannst du ableiten</h3><ul class="check-list"><li>sauer, neutral oder basisch</li><li>Vergleich des sauren/basischen Zustands</li><li>Hinweis auf H₃O⁺-Konzentration</li></ul></div><div><h3>Das folgt nicht automatisch</h3><ul class="cross-list"><li>welche Säure enthalten ist</li><li>wie „stark“ die Säure als Stoff ist</li><li>ob die Lösung ungefährlich ist</li></ul></div></div></article>
+        <button class="primary next-module" data-next="indikatoren">Weiter: Indikatoren <span aria-hidden="true">→</span></button>
+      </section>
+
+      <section class="module" id="indikatoren" data-module="indikatoren" hidden>
+        <div class="module-head"><div><p class="eyebrow">Modul 4 · Beobachten</p><h1>Farben sind Hinweise, keine Beweise</h1><p class="lead">Indikatoren ändern ihre Farbe abhängig vom pH-Bereich. Die gleiche Farbe kann bei verschiedenen Indikatoren etwas anderes bedeuten.</p></div><div class="module-badge"><span>ca. 7 min</span><strong>Simulator</strong></div></div>
+        <div class="goal"><span aria-hidden="true">◎</span><div><strong>Dein Ziel</strong><p>Du deutest Indikatorfarben nur mithilfe der passenden Farbskala und gibst pH-Bereiche statt Scheingenauigkeit an.</p></div></div>
+        <article class="card indicator-lab"><div class="indicator-controls"><div><p class="step-label">Indikator-Labor</p><h2>Vergleiche zwei Farbskalen</h2><label for="indicatorSelect">Indikator</label><select id="indicatorSelect"><option value="universal">Universalindikator</option><option value="cabbage">Rotkohlsaft</option></select><label for="indicatorPh">pH-Wert: <strong id="indicatorPhLabel">7</strong></label><input type="range" id="indicatorPh" min="0" max="14" value="7" step="1"><p class="fine-print" id="indicatorNote">Universalindikator: grobe pH-Abschätzung durch mehrere Farbstoffe.</p></div><div class="beaker-wrap"><svg viewBox="0 0 260 260" class="beaker" role="img" aria-labelledby="beakerTitle"><title id="beakerTitle">Becherglas mit Indikatorlösung</title><path d="M58 30 H202 M79 30 V78 L48 220 Q46 235 62 238 H198 Q214 235 212 220 L181 78 V30" class="beaker-outline"/><path id="beakerLiquid" d="M63 153 H197 L212 220 Q214 235 198 238 H62 Q46 235 48 220 Z"/><path d="M63 153 Q130 143 197 153" class="liquid-line"/><text x="130" y="197" text-anchor="middle" id="liquidLabel">violett</text></svg><div class="result-pill">Beobachtung: <strong id="indicatorColorName">violett</strong></div></div></article>
+        <article class="card compare-scales"><p class="step-label">Direkter Vergleich</p><h2>Jeder Indikator hat seine eigene Skala</h2><div class="scale-row"><span>Universalindikator</span><div class="gradient universal-gradient"></div><small>rot → gelb → grün → blau → violett</small></div><div class="scale-row"><span>Rotkohlsaft</span><div class="gradient cabbage-gradient"></div><small>rot → pink → violett → blau → grün</small></div></article>
+        <article class="card practice-card"><p class="step-label">Urteil begründen</p><h2>„Die Lösung ist grün, also ist sie neutral.“</h2><p>Welche Bewertung ist fachlich angemessen?</p><fieldset class="choice-group graded-single" data-module-complete="indikatoren"><legend class="sr-only">Bewertung einer grünen Indikatorfarbe</legend><button class="choice" data-correct="false">Richtig. Grün bedeutet bei jedem Indikator immer pH 7.</button><button class="choice" data-correct="true">Nicht sicher beurteilbar. Man muss Indikator und Farbskala kennen; außerdem liefert die Farbe meist nur einen Bereich.</button><button class="choice" data-correct="false">Falsch. Grüne Lösungen sind grundsätzlich stark basisch.</button></fieldset><div class="feedback" aria-live="polite"></div></article>
+        <aside class="caution"><strong>Warum nur ein Bereich?</strong><span>Beleuchtung, Farbwahrnehmung, Eigenfarbe und Konzentration der Probe beeinflussen das Ergebnis.</span></aside>
+        <button class="primary next-module" data-next="produkte">Weiter: Produkte prüfen <span aria-hidden="true">→</span></button>
+      </section>
+
+      <section class="module" id="produkte" data-module="produkte" hidden>
+        <div class="module-head"><div><p class="eyebrow">Modul 5 · Anwenden</p><h1>Vier Produkte, fünf Behauptungen</h1><p class="lead">Nutze pH-Wert, Inhaltsangabe und Gefahrhinweis gemeinsam. Eine einzelne Angabe reicht oft nicht.</p></div><div class="module-badge"><span>ca. 10 min</span><strong>Transfer</strong></div></div>
+        <div class="product-grid" aria-label="Produktkarten">
+          <article class="product-card acidic"><span class="product-letter">A</span><p>Kalklöser-Konzentrat</p><strong>pH 0,7</strong><small>konzentrierte saure Formulierung</small><span class="hazard danger">Gefahr · ätzend</span></article>
+          <article class="product-card acidic-soft"><span class="product-letter">B</span><p>Zitronensaft</p><strong>pH 2,3</strong><small>enthält Citronensäure</small><span class="hazard safe">kein GHS-Symbol</span></article>
+          <article class="product-card basic"><span class="product-letter">C</span><p>Backofenreiniger</p><strong>pH 13,5</strong><small>stark alkalisch, enthält NaOH</small><span class="hazard danger">Gefahr · ätzend</span></article>
+          <article class="product-card neutralish"><span class="product-letter">D</span><p>Handspülmittel</p><strong>pH 7,2</strong><small>Tensidgemisch</small><span class="hazard warning">Achtung · augenreizend</span></article>
+        </div>
+        <article class="card verdict-card"><p class="step-label">Arbeitsblatt-Training</p><h2>Zulässig oder nicht zulässig?</h2><p class="fine-print">Entscheide für jede Aussage. Falsche Entscheidungen kannst du direkt verbessern.</p><div id="claimList" class="claim-list"></div><div class="completion-note" id="productCompletion" aria-live="polite"></div></article>
+        <article class="card takeaway"><div class="takeaway-icon" aria-hidden="true">!</div><div><h2>Gefahr lässt sich nicht am pH-Wert allein ablesen</h2><p>Extreme pH-Werte können auf eine ätzende Wirkung hinweisen. Für eine sichere Bewertung brauchst du aber zusätzlich Konzentration, Stoffeigenschaften, Menge, Expositionsweg und Kennzeichnung.</p></div></article>
+        <button class="primary next-module" data-next="test">Zum Selbsttest <span aria-hidden="true">→</span></button>
+      </section>
+
+      <section class="module" id="test" data-module="test" hidden>
+        <div class="module-head"><div><p class="eyebrow">Modul 6 · Selbsttest</p><h1>Zeig, was du verstanden hast</h1><p class="lead">Acht Fragen mischen Grundlagen, Teilchenmodell, pH-Regel, Indikatoren und Produktbewertung.</p></div><div class="module-badge"><span>ca. 8 min</span><strong>Abschluss</strong></div></div>
+        <div class="test-dashboard"><div><span id="testCounter">Frage 1 von 8</span><div class="test-progress"><span id="testProgressBar"></span></div></div><div class="score-chip">Punkte <strong id="score">0</strong>/8</div></div>
+        <article class="card test-card" id="testCard"><p class="step-label" id="testTopic">Grundlagen</p><h2 id="testQuestion">Bereit?</h2><div class="test-options" id="testOptions"></div><div class="feedback" id="testFeedback" aria-live="polite"></div><button class="primary" id="nextQuestion" hidden>Nächste Frage</button></article>
+        <section class="test-result" id="testResult" hidden aria-live="polite"><div class="result-ring"><strong id="resultScore">0/8</strong><span>richtig</span></div><div><p class="eyebrow">Auswertung</p><h2 id="resultTitle">Geschafft!</h2><p id="resultText"></p><button class="secondary" id="restartTest">Test neu starten</button></div></section>
+        <article class="card final-memory"><p class="step-label">Drei Sätze zum Mitnehmen</p><ol><li>H⁺ ist ein Proton; in Wasser wird es auf H₂O übertragen und es entsteht H₃O⁺.</li><li>Je größer die H₃O⁺-Konzentration, desto kleiner der pH-Wert.</li><li>pH und Indikatorfarbe helfen beim Einordnen, ersetzen aber keine vollständige Gefährdungsbeurteilung.</li></ol></article>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

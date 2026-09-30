@@ -1,0 +1,23 @@
+/* Mobile lesbare Gleichungsseiten und direkt sichtbare Rollenwahl */
+.equation-builder { flex-wrap: nowrap; }
+.equation-side { display: flex; align-items: center; justify-content: center; gap: .6rem; flex-wrap: wrap; }
+.equation-side-label, .mobile-arrow { display: none; }
+.species-term { white-space: nowrap; }
+
+.role-item { gap: .7rem; }
+.role-formula { font-size: 1.12rem; }
+.role-select-label { display: grid; gap: .4rem; color: #52646a; font-size: .84rem; font-weight: 700; }
+.role-select { width: 100%; min-height: 48px; padding: .65rem 2.4rem .65rem .8rem; border: 1.5px solid #9fb5bb; border-radius: 9px; background: #fff; color: var(--ink); font: inherit; font-size: 1rem; font-weight: 800; cursor: pointer; }
+.role-select:focus { border-color: var(--teal); outline: 3px solid #2ec4b655; }
+
+@media (max-width: 600px) {
+  .equation-builder { display: grid; grid-template-columns: 1fr; gap: .35rem; padding: 1rem .7rem; }
+  .equation-side { width: 100%; padding: .65rem .4rem; border-radius: 9px; background: #ffffff0c; }
+  .equation-side-label { display: block; width: 100%; color: #9edbd8; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; text-align: center; }
+  .reaction-arrow { justify-self: center; line-height: 1; }
+  .desktop-arrow { display: none; }
+  .mobile-arrow { display: inline; }
+  .coefficient { width: 2.8rem; }
+  .role-item { padding: 1rem; }
+  .role-select { min-height: 52px; }
+}

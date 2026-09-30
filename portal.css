@@ -1,0 +1,47 @@
+:root {
+  --ink: #15313c; --muted: #58707a; --paper: #f6fbfc; --surface: #fff;
+  --navy: #0b3040; --teal: #0b8c8c; --aqua: #2ec4b6; --orange: #f06b45;
+  --line: #cfe0e4; --shadow: 0 18px 50px rgba(11, 48, 64, .1);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink); background: var(--paper); font-size: 16px; line-height: 1.55;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: linear-gradient(135deg, #effafb 0, #f9fcfd 55%, #eef7f8 100%); }
+.topbar { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .8rem clamp(1rem, 4vw, 3.5rem); background: var(--navy); color: #fff; }
+.brand { display: flex; align-items: center; gap: .8rem; font-weight: 750; }
+.brand-mark { display: grid; place-items: center; width: 45px; height: 45px; border-radius: 50%; background: var(--aqua); color: var(--navy); font-size: .8rem; font-weight: 900; }
+.course-label { color: #d9edf1; font-size: .9rem; font-weight: 700; }
+main { width: min(1120px, 100%); margin: 0 auto; padding: clamp(2.2rem, 6vw, 5rem) clamp(1rem, 4vw, 3.5rem) 5rem; }
+.intro { max-width: 760px; }
+.eyebrow, .card-kicker { margin: 0 0 .7rem; color: var(--teal); font-size: .78rem; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
+h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1; letter-spacing: -.045em; }
+.intro > p:last-child { margin: 1rem 0 0; max-width: 680px; color: var(--muted); font-size: 1.08rem; }
+.program-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); margin-top: 2.5rem; }
+.program-card { position: relative; min-height: 430px; display: flex; flex-direction: column; overflow: hidden; padding: clamp(1.4rem, 3vw, 2rem); border: 1px solid var(--line); border-radius: 18px; background: var(--surface); color: var(--ink); text-decoration: none; box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.program-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 7px; background: var(--teal); }
+.program-card.base::before { background: var(--orange); }
+.program-card.trainer::before { background: #d7a314; }
+.program-card:hover, .program-card:focus-visible { transform: translateY(-5px); border-color: var(--teal); box-shadow: 0 24px 60px rgba(11, 48, 64, .16); outline: none; }
+.program-card.base:hover, .program-card.base:focus-visible { border-color: var(--orange); }
+.program-card.trainer:hover, .program-card.trainer:focus-visible { border-color: #d7a314; }
+.card-number { position: absolute; right: 1.4rem; top: 1rem; color: #d7e3e6; font-size: 2.6rem; font-weight: 900; }
+.formula-mark { width: 105px; height: 105px; display: flex; align-items: center; justify-content: center; margin: 1rem 0 2rem; border-radius: 50%; background: #e3f5f4; color: var(--navy); font-size: 1.65rem; font-weight: 900; white-space: nowrap; box-shadow: inset 0 0 0 10px #f4fbfb; }
+.base .formula-mark { background: #fff0e9; color: #b7472a; box-shadow: inset 0 0 0 10px #fff8f4; }
+.trainer .formula-mark { background: #fff7d8; color: #745600; box-shadow: inset 0 0 0 10px #fffbed; }
+.card-copy { position: relative; z-index: 1; }
+.card-kicker { margin-bottom: .45rem; }
+.base .card-kicker { color: #cf5433; }
+.trainer .card-kicker { color: #997000; }
+h2 { margin: 0; font-size: clamp(1.65rem, 3vw, 2.15rem); line-height: 1.1; letter-spacing: -.025em; }
+.card-copy > p:not(.card-kicker) { color: var(--muted); }
+ul { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.2rem 0 0; padding: 0; list-style: none; }
+li { padding: .38rem .6rem; border-radius: 999px; background: #edf7f8; color: var(--navy); font-size: .8rem; font-weight: 750; }
+.base li { background: #fff2eb; }
+.trainer li { background: #fff8de; }
+.open-label { margin-top: auto; align-self: flex-start; padding: .78rem 1.05rem; border-radius: 11px; background: var(--teal); color: #fff; font-weight: 800; }
+.base .open-label { background: var(--orange); }
+.trainer .open-label { background: #b88800; }
+@media (max-width: 980px) { .program-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .program-grid { grid-template-columns: 1fr; } .program-card { min-height: 390px; } }
+@media (max-width: 520px) { .course-label { display: none; } main { padding-inline: .8rem; } h1 { font-size: 2.65rem; } }
+@media (prefers-reduced-motion: reduce) { .program-card { transition: none; } }

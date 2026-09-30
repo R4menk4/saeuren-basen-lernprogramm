@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaktiver Trainer für Reaktionsgleichungen, Brønsted-Säuren und -Basen sowie korrespondierende Säure-Base-Paare.">
+  <meta name="theme-color" content="#0b3040">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230b3040'/%3E%3Cpath d='M7 16h15m-4-5 5 5-5 5' fill='none' stroke='%232ec4b6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <title>Reaktionstrainer · Säuren und Basen</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="mobile-fixes.css?v=2">
+  <link rel="stylesheet" href="../shared-nav.css?v=2">
+</head>
+<body>
+  <a class="skip-link" href="#trainer">Zum Reaktionstrainer</a>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">H⁺</span><span>Reaktionstrainer</span></div>
+    <div class="topbar-tools">
+      <a class="hub-link" href="../index.html">Alle Lernprogramme</a>
+      <div class="top-progress" aria-label="Gesamtfortschritt"><span id="progressText">0 / 6</span><span class="progress-track"><span id="progressBar"></span></span></div>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Übungsreaktionen">
+      <p class="eyebrow">Reaktionen</p>
+      <nav id="reactionNav"></nav>
+      <div class="sidebar-note"><strong>Arbeitsweise</strong><p>Bearbeite alle vier Aufgabenteile. Eine Reaktion zählt erst dann als abgeschlossen.</p></div>
+      <button class="reset-progress" id="resetProgress" type="button">Fortschritt zurücksetzen</button>
+    </aside>
+
+    <main id="trainer" tabindex="-1">
+      <section class="module-head">
+        <div>
+          <p class="eyebrow" id="reactionLabel">Reaktion 1 · Einstieg</p>
+          <h1 id="reactionTitle">Chlorwasserstoff in Wasser</h1>
+          <p class="lead" id="reactionIntro"></p>
+        </div>
+        <div class="module-badge"><span id="reactionType">gerichtet</span><strong>Protonenübertragung</strong></div>
+      </section>
+
+      <div class="goal"><span aria-hidden="true">◎</span><div><strong>Dein Ziel</strong><p>Du gleichst die Reaktionsgleichung aus und ordnest alle Säure-Base-Rollen begründet zu.</p></div></div>
+
+      <section class="card equation-card" aria-labelledby="task1-title">
+        <p class="step-label">1 · Reaktionsgleichung</p>
+        <h2 id="task1-title">Gleiche die Gleichung aus</h2>
+        <p>Trage vor jedem Teilchen den kleinsten ganzzahligen Koeffizienten ein.</p>
+        <div class="equation-builder" id="equationBuilder" aria-label="Reaktionsgleichung mit Eingabefeldern für Koeffizienten"></div>
+        <div class="check-row"><button class="primary" data-check="balance" type="button">Koeffizienten prüfen</button><span class="feedback" id="feedback-balance" aria-live="polite"></span></div>
+      </section>
+
+      <section class="card" aria-labelledby="task2-title">
+        <p class="step-label">2 · Protonenübertragung</p>
+        <h2 id="task2-title">Bestimme Donator und Akzeptor</h2>
+        <div class="two-fields">
+          <label>Protonendonator<select id="donorSelect" data-value="donor"></select></label>
+          <label>Protonenakzeptor<select id="acceptorSelect" data-value="acceptor"></select></label>
+        </div>
+        <details><summary>Hinweis</summary><p>Verfolge das übertragene H⁺: Welches Edukt verliert es, welches nimmt es auf?</p></details>
+        <div class="check-row"><button class="primary" data-check="transfer" type="button">Zuordnung prüfen</button><span class="feedback" id="feedback-transfer" aria-live="polite"></span></div>
+      </section>
+
+      <section class="card" aria-labelledby="task3-title">
+        <p class="step-label">3 · Brønsted-Rollen</p>
+        <h2 id="task3-title">Bestimme Säure und Base</h2>
+        <p id="rolesInstruction"></p>
+        <div class="role-grid" id="roleGrid"></div>
+        <div class="check-row"><button class="primary" data-check="roles" type="button">Rollen prüfen</button><span class="feedback" id="feedback-roles" aria-live="polite"></span></div>
+      </section>
+
+      <section class="card" aria-labelledby="task4-title">
+        <p class="step-label">4 · Teilchenbeziehungen</p>
+        <h2 id="task4-title">Bestimme die korrespondierenden Säure-Base-Paare</h2>
+        <p>Markiere genau zwei Paare. Schreibe jeweils zuerst die Säure und dann die korrespondierende Base.</p>
+        <fieldset class="pair-options" id="pairOptions"><legend class="sr-only">Korrespondierende Säure-Base-Paare auswählen</legend></fieldset>
+        <details><summary>Hinweis</summary><p>Die beiden Teilchen eines korrespondierenden Paares unterscheiden sich genau um ein Proton.</p></details>
+        <div class="check-row"><button class="primary" data-check="pairs" type="button">Paare prüfen</button><span class="feedback" id="feedback-pairs" aria-live="polite"></span></div>
+      </section>
+
+      <section class="completion-card" id="completionCard" hidden aria-live="polite">
+        <div class="completion-mark">✓</div><div><p class="eyebrow">Reaktion abgeschlossen</p><h2>Alle vier Zuordnungen stimmen.</h2><p id="completionText"></p></div>
+      </section>
+
+      <div class="reaction-controls">
+        <button class="secondary" id="previousReaction" type="button">Vorherige Reaktion</button>
+        <span id="reactionCounter">1 von 6</span>
+        <button class="primary" id="nextReaction" type="button">Nächste Reaktion</button>
+      </div>
+    </main>
+  </div>
+  <script src="app.js?v=6"></script>
+</body>
+</html>

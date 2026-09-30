@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaktives Lernprogramm zu den strukturellen Voraussetzungen von Brønsted-Basen und Ampholyten.">
+  <meta name="theme-color" content="#0b3040">
+  <title>Brønsted-Basen erkennen</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="oxonium-theme.css?v=3">
+  <link rel="stylesheet" href="../shared-nav.css?v=2">
+</head>
+<body>
+  <a class="skip-link" href="#learning-program">Zum Lerninhalt</a>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">B:</span><span>Brønsted-Labor</span></div>
+    <div class="topbar-actions">
+      <a class="hub-link" href="../index.html">Alle Lernprogramme</a>
+      <button class="secondary" id="print-button" type="button">Antworten drucken</button>
+      <button class="secondary danger" id="reset-button" type="button">Neu beginnen</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <nav class="learning-path" aria-label="Lernschritte">
+      <p class="nav-title">Dein Lernweg</p>
+      <ol id="step-navigation">
+        <li><button type="button" data-step="0"><span>1</span>Protonenaufnahme</button></li>
+        <li><button type="button" data-step="1"><span>2</span>Ladung und Elektronenpaar</button></li>
+        <li><button type="button" data-step="2"><span>3</span>Basen erkennen</button></li>
+        <li><button type="button" data-step="3"><span>4</span>Struktur und Stärke</button></li>
+        <li><button type="button" data-step="4"><span>5</span>Übung und Transfer</button></li>
+      </ol>
+      <div class="progress-block">
+        <div class="progress-label"><span>Fortschritt</span><strong id="progress-text">0 von 5</strong></div>
+        <div class="progress-track" aria-hidden="true"><div id="progress-bar"></div></div>
+      </div>
+    </nav>
+
+    <main id="learning-program">
+      <section class="lesson-step" data-step-panel="0" aria-labelledby="step-1-title">
+        <p class="step-label">Lernschritt 1</p>
+        <h2 id="step-1-title">Protonenaufnahme am Beispiel Ammoniak</h2>
+        <p>Bei einer Brønsted-Reaktion wird ein Proton von einem Teilchen auf ein anderes übertragen. Untersuche, weshalb Ammoniak das Proton aufnehmen kann.</p>
+
+        <div class="reaction" aria-label="Ammoniak reagiert mit Oxonium-Ionen zu Ammonium-Ionen und Wasser">
+          <span>H<sub>3</sub>N<span class="electron-pair" title="freies Elektronenpaar">:</span></span>
+          <span>+</span>
+          <span>H<sub>3</sub>O<sup>+</sup></span>
+          <span>⇌</span>
+          <span>NH<sub>4</sub><sup>+</sup></span>
+          <span>+</span>
+          <span>H<sub>2</sub>O</span>
+        </div>
+        <p class="caption">Der Doppelpunkt steht für das freie Elektronenpaar am Stickstoffatom.</p>
+
+        <fieldset>
+          <legend>1. Welches Teilchen wirkt in der Hinreaktion als Protonenakzeptor?</legend>
+          <label><input type="radio" name="step1-base" value="h3o"> H<sub>3</sub>O<sup>+</sup></label>
+          <label><input type="radio" name="step1-base" value="nh3"> NH<sub>3</sub></label>
+          <label><input type="radio" name="step1-base" value="nh4"> NH<sub>4</sub><sup>+</sup></label>
+        </fieldset>
+
+        <label class="long-answer">2. Erkläre mithilfe des Teilchenbaus, weshalb NH<sub>3</sub> das Proton aufnehmen kann.
+          <textarea id="step1-explanation" rows="4" placeholder="Deine Begründung"></textarea>
+        </label>
+
+        <div class="action-row">
+          <button class="primary check-step" type="button" data-check="step1">Antwort prüfen</button>
+        </div>
+        <div class="feedback" id="feedback-step1" aria-live="polite"></div>
+        <div class="solution" id="solution-step1" hidden>
+          <h3>Selbstkontrolle</h3>
+          <p>NH<sub>3</sub> ist der Protonenakzeptor. Das Stickstoffatom stellt sein freies Elektronenpaar für die neue N–H-Bindung bereit.</p>
+        </div>
+      </section>
+
+      <section class="lesson-step" data-step-panel="1" aria-labelledby="step-2-title" hidden>
+        <p class="step-label">Lernschritt 2</p>
+        <h2 id="step-2-title">Ladung und freies Elektronenpaar</h2>
+        <p>OH<sup>−</sup>, H<sub>2</sub>O und NH<sub>3</sub> können Protonen aufnehmen, obwohl sie nicht gleich geladen sind.</p>
+
+        <div class="particle-comparison" aria-label="Vergleich unterschiedlich geladener Brønsted-Basen">
+          <div><strong>OH<sup>−</sup></strong><span>negativ geladen</span></div>
+          <div><strong>H<sub>2</sub>O</strong><span>ungeladen</span></div>
+          <div><strong>NH<sub>3</sub></strong><span>ungeladen</span></div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Teilchen</th><th>Ladung</th><th>Produkt der Protonenaufnahme</th></tr></thead>
+            <tbody>
+              <tr><th>OH<sup>−</sup></th><td>−1</td><td><select id="product-oh"><option value="">auswählen</option><option>H₂O</option><option>H₃O⁺</option><option>NH₄⁺</option></select></td></tr>
+              <tr><th>H<sub>2</sub>O</th><td>0</td><td><select id="product-h2o"><option value="">auswählen</option><option>H₂O</option><option>H₃O⁺</option><option>NH₄⁺</option></select></td></tr>
+              <tr><th>NH<sub>3</sub></th><td>0</td><td><select id="product-nh3"><option value="">auswählen</option><option>H₂O</option><option>H₃O⁺</option><option>NH₄⁺</option></select></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <fieldset>
+          <legend>Welche Gemeinsamkeit ermöglicht die Protonenaufnahme?</legend>
+          <label><input type="radio" name="step2-common" value="negative"> Alle Teilchen sind negativ geladen.</label>
+          <label><input type="radio" name="step2-common" value="pair"> Alle Teilchen besitzen ein verfügbares freies Elektronenpaar.</label>
+          <label><input type="radio" name="step2-common" value="hydrogen"> Alle Teilchen enthalten Wasserstoff.</label>
+        </fieldset>
+
+        <div class="action-row"><button class="primary check-step" type="button" data-check="step2">Antworten prüfen</button></div>
+        <div class="feedback" id="feedback-step2" aria-live="polite"></div>
+        <div class="solution" id="solution-step2" hidden>
+          <h3>Merksatz</h3>
+          <p>Eine Brønsted-Base benötigt ein verfügbares freies Elektronenpaar, an das ein Proton gebunden werden kann. Eine negative Ladung ist ein häufiges Erkennungsmerkmal, aber keine notwendige Voraussetzung.</p>
+        </div>
+      </section>
+
+      <section class="lesson-step" data-step-panel="2" aria-labelledby="step-3-title" hidden>
+        <p class="step-label">Lernschritt 3</p>
+        <h2 id="step-3-title">Teilchen auf mögliche Protonenaufnahme prüfen</h2>
+        <p>Fülle die Tabelle aus. Die Aussagen gelten im derzeit verwendeten Modell und unter den betrachteten Bedingungen.</p>
+
+        <div class="table-wrap wide-table">
+          <table id="classification-table">
+            <thead><tr><th>Teilchen</th><th>Ladung</th><th>freies Elektronenpaar</th><th>Produkt</th><th>Brønsted-Base</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <label class="long-answer">Begründe die Einordnung von NH<sub>4</sub><sup>+</sup> und CH<sub>4</sub> mit ihrem Teilchenbau.
+          <textarea id="step3-explanation" rows="4" placeholder="Deine Begründung"></textarea>
+        </label>
+
+        <div class="action-row"><button class="primary check-step" type="button" data-check="step3">Tabelle prüfen</button></div>
+        <div class="feedback" id="feedback-step3" aria-live="polite"></div>
+        <div class="solution" id="solution-step3" hidden>
+          <h3>Hinweis zu Chlorid</h3>
+          <p>Cl<sup>−</sup> erfüllt die strukturelle Voraussetzung und kann formal ein Proton zu HCl binden. In Wasser ist es jedoch eine sehr schwache Base.</p>
+        </div>
+      </section>
+
+      <section class="lesson-step" data-step-panel="3" aria-labelledby="step-4-title" hidden>
+        <p class="step-label">Lernschritt 4</p>
+        <h2 id="step-4-title">Strukturelle Möglichkeit und Basenstärke</h2>
+
+        <div class="question-pair">
+          <div><h3>Strukturfrage</h3><p>Kann das Teilchen grundsätzlich ein Proton binden?</p></div>
+          <div><h3>Stärkefrage</h3><p>Wie leicht nimmt das Teilchen unter den betrachteten Bedingungen ein Proton auf?</p></div>
+        </div>
+        <p class="key-sentence">OH<sup>−</sup>, NH<sub>3</sub>, H<sub>2</sub>O und Cl<sup>−</sup> besitzen freie Elektronenpaare. Trotzdem reagieren sie nicht gleich stark als Base.</p>
+
+        <div class="claim-list">
+          <fieldset>
+            <legend>A. Ein negativ geladenes Teilchen ist immer eine starke Brønsted-Base.</legend>
+            <label><input type="radio" name="claim-a" value="true"> richtig</label>
+            <label><input type="radio" name="claim-a" value="false"> falsch</label>
+          </fieldset>
+          <fieldset>
+            <legend>B. Ein ungeladenes Teilchen kann keine Brønsted-Base sein.</legend>
+            <label><input type="radio" name="claim-b" value="true"> richtig</label>
+            <label><input type="radio" name="claim-b" value="false"> falsch</label>
+          </fieldset>
+          <fieldset>
+            <legend>C. Ein freies Elektronenpaar zeigt eine mögliche Protonenaufnahme, aber nicht automatisch eine starke Basenwirkung.</legend>
+            <label><input type="radio" name="claim-c" value="true"> richtig</label>
+            <label><input type="radio" name="claim-c" value="false"> falsch</label>
+          </fieldset>
+        </div>
+
+        <label class="long-answer">Begründe mindestens eine deiner Entscheidungen.
+          <textarea id="step4-explanation" rows="4" placeholder="Deine Begründung"></textarea>
+        </label>
+        <div class="action-row"><button class="primary check-step" type="button" data-check="step4">Aussagen prüfen</button></div>
+        <div class="feedback" id="feedback-step4" aria-live="polite"></div>
+        <div class="solution" id="solution-step4" hidden>
+          <h3>Selbstkontrolle</h3>
+          <p>A und B sind falsch, C ist richtig. Die Ladung liefert einen Hinweis. Die Stärke einer Base hängt darüber hinaus davon ab, wie leicht ihr Elektronenpaar ein Proton bindet.</p>
+        </div>
+      </section>
+
+      <section class="lesson-step" data-step-panel="4" aria-labelledby="step-5-title" hidden>
+        <p class="step-label">Lernschritt 5</p>
+        <h2 id="step-5-title">Übung und Transfer auf Ampholyte</h2>
+        <p>Prüfe zunächst weitere Teilchen auf eine mögliche Protonenaufnahme.</p>
+
+        <div class="table-wrap wide-table">
+          <table id="practice-table">
+            <thead><tr><th>Teilchen</th><th>Aufnahme möglich</th><th>entstehendes Teilchen</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <h3>Transfer</h3>
+        <p>Ein Ampholyt kann ein Proton aufnehmen und abgeben. Ergänze die korrespondierenden Teilchen.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Teilchen</th><th>nach Protonenaufnahme</th><th>nach Protonenabgabe</th></tr></thead>
+            <tbody>
+              <tr><th>H<sub>2</sub>PO<sub>4</sub><sup>−</sup></th><td><select id="h2po4-accept"><option value="">auswählen</option><option>H₃PO₄</option><option>HPO₄²⁻</option><option>PO₄³⁻</option></select></td><td><select id="h2po4-donate"><option value="">auswählen</option><option>H₃PO₄</option><option>HPO₄²⁻</option><option>PO₄³⁻</option></select></td></tr>
+              <tr><th>HPO<sub>4</sub><sup>2−</sup></th><td><select id="hpo4-accept"><option value="">auswählen</option><option>H₂PO₄⁻</option><option>H₃PO₄</option><option>PO₄³⁻</option></select></td><td><select id="hpo4-donate"><option value="">auswählen</option><option>H₂PO₄⁻</option><option>H₃PO₄</option><option>PO₄³⁻</option></select></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <label class="long-answer">Begründe für eines der beiden Teilchen, dass es ein Ampholyt ist.
+          <textarea id="step5-explanation" rows="4" placeholder="Deine Begründung"></textarea>
+        </label>
+        <div class="action-row"><button class="primary check-step" type="button" data-check="step5">Übung prüfen</button></div>
+        <div class="feedback" id="feedback-step5" aria-live="polite"></div>
+        <div class="solution" id="solution-step5" hidden>
+          <h3>Abschluss</h3>
+          <p>H<sub>2</sub>PO<sub>4</sub><sup>−</sup> wird durch Protonenaufnahme zu H<sub>3</sub>PO<sub>4</sub> und durch Protonenabgabe zu HPO<sub>4</sub><sup>2−</sup>. HPO<sub>4</sub><sup>2−</sup> wird entsprechend zu H<sub>2</sub>PO<sub>4</sub><sup>−</sup> beziehungsweise PO<sub>4</sub><sup>3−</sup>.</p>
+        </div>
+
+        <label class="long-answer final-question">Abschlussfrage: Weshalb erlaubt eine negative Ladung allein noch keine Aussage über die Stärke einer Brønsted-Base?
+          <textarea id="final-answer" rows="4" placeholder="Deine abschließende Erklärung"></textarea>
+        </label>
+      </section>
+
+      <div class="step-controls">
+        <button class="secondary" id="previous-step" type="button">Zurück</button>
+        <span id="step-counter">Lernschritt 1 von 5</span>
+        <button class="primary" id="next-step" type="button">Weiter</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js?v=2"></script>
+</body>
+</html>
