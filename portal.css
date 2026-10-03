@@ -16,7 +16,12 @@ main { width: min(1120px, 100%); margin: 0 auto; padding: clamp(2.2rem, 6vw, 5re
 .eyebrow, .card-kicker { margin: 0 0 .7rem; color: var(--teal); font-size: .78rem; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
 h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1; letter-spacing: -.045em; }
 .intro > p:last-child { margin: 1rem 0 0; max-width: 680px; color: var(--muted); font-size: 1.08rem; }
-.program-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); margin-top: 2.5rem; }
+.program-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); margin-top: 2.5rem; }
+.program-card.exam::before { background: #6550a3; }
+.exam .formula-mark { background: #eee8fa; color: #493478; box-shadow: inset 0 0 0 10px #f8f5ff; font-size: 1.15rem; }
+.exam .card-kicker { color: #6550a3; }
+.exam .open-label { background: #6550a3; }
+.exam li { background: #eee8fa; }
 .program-card { position: relative; min-height: 430px; display: flex; flex-direction: column; overflow: hidden; padding: clamp(1.4rem, 3vw, 2rem); border: 1px solid var(--line); border-radius: 18px; background: var(--surface); color: var(--ink); text-decoration: none; box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
 .program-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 7px; background: var(--teal); }
 .program-card.base::before { background: var(--orange); }
