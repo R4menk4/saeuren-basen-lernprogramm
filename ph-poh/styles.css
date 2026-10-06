@@ -1,0 +1,7 @@
+@import url('../klausurentrainer/styles.css');
+:root{--accent:#2766aa}
+.entry-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{display:block;font-weight:650}input:not([type=checkbox]),select{display:block;width:100%;font:inherit;color:inherit;padding:.7rem;border:1px solid #a5b7c4;border-radius:8px;background:white;margin:.4rem 0 1rem;min-height:46px}
+.formula-grid>div{background:#edf5fa;padding:1rem;border-radius:10px}.formula-grid p{padding:0;background:none}
+.formula-grid h3{margin:0}.feedback{padding:.6rem 0;font-weight:650}.correct{color:#18633b}.retry{color:#8c4411}.result-box{background:#edf5fa;border-radius:10px;padding:1rem;margin-top:1rem}.answer-row{max-width:450px}.task details{margin-top:1rem}.task button{margin-right:.5rem}button{color:#235789;border-color:#2766aa}.task textarea{min-height:85px}#progress{font-weight:750}
+@media(max-width:650px){.entry-grid{grid-template-columns:1fr}}

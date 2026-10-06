@@ -1,0 +1,7 @@
+@import url('../../klausurentrainer/styles.css');
+:root{--accent:#2766aa}
+a,summary{color:#235789}.hint{background:#edf5fa}details{background:#f6faff;border-color:#bdcfe0}details[open] summary{border-color:#bdcfe0}
+ol[type="a"]{padding-left:1.6rem}ol[type="a"]>li{padding-left:.25rem;margin:.7rem 0}
+.solution p{overflow-wrap:anywhere}.block textarea{min-height:140px}.formula-box{margin-bottom:2rem}
+.breadcrumbs{display:flex;flex-wrap:wrap;gap:.6rem;background:none}.breadcrumbs a{padding:.5rem .7rem}
+:focus-visible{outline-color:#2766aa}

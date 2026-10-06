@@ -18,6 +18,10 @@ h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1; letter-sp
 .intro > p:last-child { margin: 1rem 0 0; max-width: 680px; color: var(--muted); font-size: 1.08rem; }
 .program-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); margin-top: 2.5rem; }
 .program-card.exam::before { background: #6550a3; }
+.program-card.calculation::before,.calculation .open-label { background: #2766aa; }
+.calculation .formula-mark { background: #e3effb; color: #235789; box-shadow: inset 0 0 0 10px #f3f8ff; }
+.calculation .card-kicker { color: #2766aa; }
+.calculation li { background: #e3effb; }
 .exam .formula-mark { background: #eee8fa; color: #493478; box-shadow: inset 0 0 0 10px #f8f5ff; font-size: 1.15rem; }
 .exam .card-kicker { color: #6550a3; }
 .exam .open-label { background: #6550a3; }
